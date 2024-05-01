@@ -4,8 +4,8 @@ const reader = readline.createInterface({
     ouput: process.stdout
 });
 
-console.log("Welcome to Holberton School, what is your name?\n");
-reader.question( "Welcome to Holberton School, what is your name?", function(name){
+console.log("Welcome to Holberton School, what is your name?");
+reader.question( "Welcome to Holberton School, what is your name?\n", function(name){
     console.log(`Your name is: ${name}`);
     reader.close();
 });
