@@ -12,5 +12,5 @@ reader.question( "Welcome to Holberton School, what is your name?", function(nam
 
 reader.on('close', function(){
     console.log("This important software is now closing");
-    //process.exit(0);
+    process.exit(0);
 });
