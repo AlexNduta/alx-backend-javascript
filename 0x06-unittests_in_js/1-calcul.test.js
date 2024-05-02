@@ -8,9 +8,26 @@ const calc = require('./1-calcul.js').calculateNumber;
 describe('1-calcul', ()=>{
     it('Should return a whole value', ()=>{
         var result =calc('SUM',10,5);
-        assert.equal(result, 15)
+        assert.equal(result, 15);
     });
-    it('Should return a rounded value', ()=>{
-        const rounded_a = Math.round()
-    })
+
+    it('This is a confirmation that input values are rounded', ()=>{
+        const rounded_a = Math.round(-4.5);
+        const rounded_b = Math.round(5);
+        var results = calc('SUM', rounded_a, rounded_b);
+        assert.equal(results, rounded_a + rounded_b);
+    });
+    it('This is a confirmation that the Subtraction feature works', ()=>{
+        var result =calc('SUBTRACT',10,5);
+        assert.equal(result, 5);
+    });
+    it('This is a  confirmation that the DIvide feature works', ()=>{
+        var result =calc('DIVIDE',10,2);
+        assert.equal(result, 5);
+    });
+
+    it('This is a  confirmation that you cannot divide a number with xzero', ()=>{
+        assert.thows(()=> calc('DIVIDE', 10, 0), Error, 'Division by Zero'
+);
+    });
 });
