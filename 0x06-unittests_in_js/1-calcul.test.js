@@ -1,29 +1,21 @@
-/*
- * test for the 1-cacul.js methodds
- */
-
 const assert = require('assert');
-const calc = require('./1-calcul.js').calculateNumber;
+const calculateNumber = require('./1-calcul');
 
-describe('1-calcul', ()=>{
-    it('Should return a whole value', ()=>{
-        var result =calc('SUM',10,5);
-        assert.equal(result, 15);
-    });
+describe('calculateNumber', function () {
+  it('should add two numbers', function () {
+    assert.strictEqual(calculateNumber('SUM', 1.4, 4.5), 6);
+  });
 
-    it('This is a confirmation that input values are rounded', ()=>{
-        const rounded_a = Math.round(-4.5);
-        const rounded_b = Math.round(5);
-        var results = calc('SUM', rounded_a, rounded_b);
-        assert.equal(results, rounded_a + rounded_b);
-    });
-    it('This is a confirmation that the Subtraction feature works', ()=>{
-        var result =calc('SUBTRACT',10,5);
-        assert.equal(result, 5);
-    });
-    it('This is a  confirmation that the DIvide feature works', ()=>{
-        var result =calc('DIVIDE',10,2);
-        assert.equal(result, 5);
-    });
+  it('should subtract two numbers', function () {
+    assert.strictEqual(calculateNumber('SUBTRACT', 1.4, 4.5), -4);
+  });
+
+  it('should divide two numbers', function () {
+    assert.strictEqual(calculateNumber('DIVIDE', 1.4, 4.5), 0.2);
+  });
+
+  it('should return Error when dividing by zero', function () {
+    assert.strictEqual(calculateNumber('DIVIDE', 1.4, 0), 'Error');
+  });
 
 });
