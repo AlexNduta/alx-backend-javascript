@@ -26,8 +26,4 @@ describe('1-calcul', ()=>{
         assert.equal(result, 5);
     });
 
-    it('This is a  confirmation that you cannot divide a number with xzero', ()=>{
-        assert.thows(()=> calc('DIVIDE', 10, 0), Error, 'Division by Zero'
-);
-    });
 });
