@@ -14,5 +14,10 @@ describe('calculateNums', ()=>{
         assert.equal(results, expectedRoundedNum1 + expectedRoundedNum2
         );
     });
-
+    it('should return a negative value if the passed value is negativei', ()=>{
+        const expectedRoundedNum1 = Math.round(-4.5);
+        const expectedRoundedNum2 = Math.round(5);
+        const results = calculateNum(expectedRoundedNum1, expectedRoundedNum2);
+        assert.equal(results, 1);
+    });
 });
