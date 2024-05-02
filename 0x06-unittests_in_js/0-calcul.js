@@ -5,7 +5,7 @@
  * return sum of a and b
  */
 module.exports = {
-    calculateNumber: (a, b)=> {
+    calculateNumber: (a, b, type)=> {
     return Math.round(a) + Math.round(b);
  }
 }
